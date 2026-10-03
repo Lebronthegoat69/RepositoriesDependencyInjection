@@ -1,0 +1,18 @@
+@model MicroBlog.Models.Post
+
+<div class="card mb-3">
+    <div class="card-body">
+        <h3 class="card-title">@Model.Title</h3>
+
+        @if (!string.IsNullOrEmpty(Model.Author))
+        {
+            <p class="text-muted">By @Model.Author</p>
+        }
+
+        <p class="card-text">@Model.Content</p>
+
+        <a asp-page="/Details" asp-route-id="@Model.Id" class="btn btn-primary">
+            View Post
+        </a>
+    </div>
+</div>

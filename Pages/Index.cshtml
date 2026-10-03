@@ -1,0 +1,25 @@
+﻿@page
+@model MicroBlog.Pages.IndexModel
+
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="text-center">
+    <h1 class="display-4">MicroBlog</h1>
+    <p>Welcome to MicroBlog!</p>
+</div>
+
+<div class="mt-4">
+    @if (Model.Posts.Count == 0)
+    {
+        <p>No posts have been created yet.</p>
+    }
+    else
+    {
+        @foreach (var post in Model.Posts)
+        {
+            <partial name="_PostCard" model="post" />
+        }
+    }
+</div>

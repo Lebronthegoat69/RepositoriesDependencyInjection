@@ -1,0 +1,24 @@
+﻿@page
+@model MicroBlog.Pages.DetailsModel
+
+@{
+    ViewData["Title"] = "Post Details";
+}
+
+@if (Model.Post != null)
+{
+    <div class="card">
+        <div class="card-body">
+            <h1 class="card-title">@Model.Post.Title</h1>
+
+            @if (!string.IsNullOrEmpty(Model.Post.Author))
+            {
+                <p class="text-muted">By @Model.Post.Author</p>
+            }
+
+            <p class="card-text">@Model.Post.Content</p>
+
+            <a asp-page="./Index" class="btn btn-secondary">Back to Posts</a>
+        </div>
+    </div>
+}
